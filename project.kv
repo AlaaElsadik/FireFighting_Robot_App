@@ -1,0 +1,96 @@
+windowManger:
+    MainWindow:
+    SecondWindow:
+
+<MainWindow>
+    name: "main"
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:3
+                
+
+            Image:
+                source:'E:\\app_image.jpg'
+                size_hint:(0.5,0.5)
+                pos_hint:{'x':0.3,'y':0.6}
+
+            Label: 
+                text:' firefighting ropot '
+                font_size:22
+               
+            #Label: 
+            #    text:'please enter password'
+            #    size_hint:(0.1,0.3)
+            BoxLayout:
+                orientation: 'vertical'
+                padding: 20
+                spacing: 20
+                Label:
+                    text: 'Enter your email address:'
+                    font_size: '20sp'
+                    size_hint: (1, 0.2)
+                TextInput:
+                    id: email_input
+                    multiline: False
+                    hint_text: "example@fire.com"
+                    background_color: (1, 1, 1, 1)
+                    foreground_color: (0, 0, 0, 1)
+                    font_size: '16sp'
+                    size_hint: (1, 0.4)
+                Label:
+                    text: 'Enter your password:'
+                    font_size: '20sp'
+                    size_hint: (1, 0.2)
+                TextInput:
+                    id: pass_input
+                    password : True
+                    multiline: False
+                    hint_text: "password"
+                    background_color: (1, 1, 1, 1)
+                    foreground_color: (0, 0, 0, 1)
+                    font_size: '16sp'
+                    size_hint: (1, 0.4)
+                   
+                   
+                Button:
+                    text: 'Submit'
+                    font_size: '20sp'
+                    size_hint: (1, 0.4)
+                    background_color: (0,0,255)
+                    on_release:
+                        app.root.current='second' if( email_input.text =="alaa@fire.com" and pass_input.text =="fire1" or email_input.text =="mennaashref@fire.com" and pass_input.text =="fire2" or email_input.text =="mennaessam@fire.com" and pass_input.text =="fire3" or email_input.text =="abdelrahman@fire.com" and pass_input.text =="fire4" or email_input.text =="tarek@fire.com" and pass_input.text =="fire5") else "main" 
+                        # root.manger.transition.direction = "up"
+
+
+
+<SecondWindow>:
+    name:'second'
+    GridLayout:
+        cols:1
+        GridLayout:
+            rows:2
+            Image:
+                id: camera_feed
+            Joystick:
+                sticky: False
+                outer_size: 1
+                inner_size: 0.75
+                pad_size:   0.5
+                outer_line_width: 0.01
+                inner_line_width: 0.01
+                pad_line_width:   0.01
+                outer_background_color: (0.75, 0.75, 0.75, 0.3)
+                outer_line_color:       (0.25, 0.25, 0.25, 0.3)
+                inner_background_color: (0.75, 0.75, 0.75, 0.1)
+                inner_line_color:       (0.7,  0.7,  0.7,  0.1)
+                pad_background_color:   (0.4,  0.4,  0.4,  0.3)
+                pad_line_color:         (0.35, 0.35, 0.35, 0.3)
+
+
+
+          
+
+
+
+    
